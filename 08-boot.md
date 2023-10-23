@@ -12,10 +12,12 @@
 
 В конце строки, начинающейся с linux16, добавляем rd.break
 Попадаем в emergency mode.
+
     # mount -o remount,rw /sysroot
     # chroot /sysroot
     # passwd root
     # touch /.autorelabel
+    
 Перезагружаемся , входим с новым паролем. 
 
 ### Способ 3. rw init=/sysroot/bin/sh
