@@ -7,3 +7,4 @@
 
     #mount -o remount,rw /
 
+трям
