@@ -29,16 +29,16 @@
 
 ## Переименование VG LVM
 
-[root@localhost ~]# vgs
-  VG     #PV #LV #SN Attr   VSize   VFree
-  centos   1   2   0 wz--n- <19.00g    0
+    [root@localhost ~]# vgs
+    VG     #PV #LV #SN Attr   VSize   VFree
+    centos   1   2   0 wz--n- <19.00g    0
 
-[root@localhost ~]# vgrename centos OtusRoot
-  Volume group "centos" successfully renamed to "OtusRoot"
+    [root@localhost ~]# vgrename centos OtusRoot
+    Volume group "centos" successfully renamed to "OtusRoot"
 
-[root@localhost ~]# vgs
-  VG       #PV #LV #SN Attr   VSize   VFree
-  OtusRoot   1   2   0 wz--n- <19.00g    0
+    [root@localhost ~]# vgs
+    VG       #PV #LV #SN Attr   VSize   VFree
+    OtusRoot   1   2   0 wz--n- <19.00g    0
 
 
 Далее правим /etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg. 
