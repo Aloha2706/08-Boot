@@ -42,14 +42,12 @@
 
 
 Далее правим /etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg. 
+заменяем "centos" "OtusRoot"
+Пересоздаем initramfs 
 
-    # sed -i 's/centos/OtusRoot/'  /etc/default/grub
-    # sed -i 's/centos/OtusRoot/'  /boot/grub2/grub.cfg
+    mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 
-
-mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
-
-# здесь не закончил чтото пошло не так при сборке и не смог загрузиться 
+Перезагружаемся и если все сделали правильно. то загрузимся без ошибок. 
 
 
 ### Добавляем модуль в initrd
