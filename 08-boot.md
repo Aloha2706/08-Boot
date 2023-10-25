@@ -104,4 +104,31 @@ test.sh
 mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 или  dracut -f -v 
 
+Проверяем добавился ли скрипт 
+
+    #lsinitrd -m /boot/initramfs-$(uname -r).img | grep test
+    test
+
+удаляем опции из grub.cfg
+    
+    sed -i 's/rhgb quiet//'  /boot/grub2/grub.cfg
+
+При перезагрузке пингвина увидеть сложно, поэтому читаем 
+
+     less /var/log/messages
+
+    Oct 25 12:20:08 localhost dracut-pre-pivot: Hello! You are in dracut module!
+    Oct 25 12:20:08 localhost dracut-pre-pivot: ___________________
+    Oct 25 12:20:08 localhost dracut-pre-pivot: < I'm dracut module >
+    Oct 25 12:20:08 localhost dracut-pre-pivot: -------------------
+    Oct 25 12:20:08 localhost dracut-pre-pivot: \
+    Oct 25 12:20:08 localhost dracut-pre-pivot: \
+    Oct 25 12:20:08 localhost dracut-pre-pivot: .--.
+    Oct 25 12:20:08 localhost dracut-pre-pivot: |o_o |
+    Oct 25 12:20:08 localhost dracut-pre-pivot: |:_/ |
+    Oct 25 12:20:08 localhost dracut-pre-pivot: //   \ \
+    Oct 25 12:20:08 localhost dracut-pre-pivot: (|     | )
+    Oct 25 12:20:08 localhost dracut-pre-pivot: /'\_   _/`\
+    Oct 25 12:20:08 localhost dracut-pre-pivot: \___)=(___/
+    Oct 25 12:20:18 localhost dracut-pre-pivot: continuing....
 
